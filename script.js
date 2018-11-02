@@ -41,7 +41,8 @@ app.get("/api/reservations", function(req, res) {
 // Displays a single character, or returns false
 app.get("/api/reservations", function(req, res) {
   var chosen = req.params.newTable;
-
+  console.log("here!");
+console.log(req.params);
   console.log(chosen);
 
   for (var i = 0; i < reservations.length; i++) {
@@ -64,6 +65,8 @@ app.post("/api/reservations", function(req, res) {
   console.log(newReservations);
 
   reservations.push(newReservations);
+  // console.log("here!");
+  // console.log(reservations);
 
   res.json(newReservations);
 });
