@@ -15,32 +15,7 @@ app.use(bodyParser.json());
 
 // Reservations (DATA)
 // =============================================================
-var reservations = [
-  {
-    resID: 01,
-    name: "Yoda Yoda",
-    party: 1,
-    time: Date(2018, 11, 24, 9, 00),
-    phone: 555-555-0000,
-    table: 5
-  },
-  {
-    resID: 02,
-    name: "Luke Skywalker",
-    party: 4,
-    time: Date(2018, 11, 24, 10, 00),
-    phone: 555-555-0001,
-    table: 8
-  },
-  {
-    resID: 03,
-    name: "Han Solo",
-    party: 2,
-    time: Date(2018, 11, 24, 8, 00),
-    phone: 555-555-0002,
-    table: 9
-  }
-];
+var reservations = [];
 
 // Routes
 // =============================================================
@@ -83,7 +58,7 @@ app.post("/api/reservations", function(req, res) {
   // req.body hosts is equal to the JSON post sent from the user
   // This works because of our body-parser middleware
   var newReservations = req.body;
-  
+
   console.log(newReservations);
 
   reservations.push(newReservations);
