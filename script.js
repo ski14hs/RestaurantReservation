@@ -59,6 +59,8 @@ app.post("/api/reservations", function(req, res) {
   // This works because of our body-parser middleware
   var newReservations = req.body;
 
+  newcharacter.routeName = newcharacter.name.toLowerCase()
+
   console.log(newReservations);
 
   reservations.push(newReservations);
