@@ -61,6 +61,22 @@
 	</div>
 
 </body>
+<script type="text/javascript">
 
+    $.get("/api/reservations", function(data) {
+      for (var i = 0; i < data.length; i++) {
+        var wellSection = $("<div>");
+        wellSection.addClass("well");
+        wellSection.attr("id", "character-well-" + i);
+        $("#well-section").append(wellSection);
+
+        $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
+        $("#character-well-" + i).append("<h3>Phone: " + data[i].phone + "</h4>");
+        $("#character-well-" + i).append("<h3>Email: " + data[i].email + "</h4>");
+        $("#character-well-" + i).append("<h3>User Id: " + data[i].uid + "</h4>");
+      }
+    });
+  </script>
+  
 
 </html>
