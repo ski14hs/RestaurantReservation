@@ -76,10 +76,11 @@
       };
 
       // After object created will post to API endpoint
-      $.post("/api/tableAdd", newTable)
+      $.post("/api/reservations", newTable)
         .then(function(data) {
+            console.log("Adding Table");
           console.log(data);
-          alert("Adding table...");
+        //   alert("Adding table...");
         });
 
     });
