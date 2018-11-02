@@ -59,7 +59,7 @@ app.post("/api/reservations", function(req, res) {
   // This works because of our body-parser middleware
   var newReservations = req.body;
 
-  console.log(newReservations);
+  // console.log(newReservations);
 
   reservations.push(newReservations);
 

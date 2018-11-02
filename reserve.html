@@ -94,8 +94,12 @@ crossorigin="anonymous">
       $.post("/api/reservations", newTable)
         .then(function(data) {
             console.log("Adding Table");
-          console.log(data);
+        //   console.log(data);
           alert("Table added");
+          $("#name").val("");
+          $("#phone").val("");
+          $("#email").val("");
+          $("#uid").val("");
         });
 
     });
