@@ -62,13 +62,22 @@
 
 </body>
 <script type="text/javascript">
-
+// console.log("test");
+// alert("RIGHT HERE~!");
     $.get("/api/reservations", function(data) {
+		// alert("Inside Get");
+		console.log(data);
       for (var i = 0; i < data.length; i++) {
         var wellSection = $("<div>");
         wellSection.addClass("well");
-        wellSection.attr("id", "character-well-" + i);
-        $("#well-section").append(wellSection);
+		wellSection.attr("id", "character-well-" + i);
+		if(i < 5){
+			$("#tableSection").append(wellSection);
+			// alert("added Table here");
+		} else {
+			$("#waitlistSection").append(wellSection);
+		}
+        // $("#well-section").append(wellSection);
 
         $("#character-well-" + i).append("<h2>" + data[i].name + "</h2>");
         $("#character-well-" + i).append("<h3>Phone: " + data[i].phone + "</h4>");

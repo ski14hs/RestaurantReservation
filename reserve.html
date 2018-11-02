@@ -79,6 +79,7 @@ crossorigin="anonymous">
 
   <script type="text/javascript">
     // Click listener creates new Table Object
+    // console.log("reservations");
     $("#add-btn").on("click", function(event) {
       event.preventDefault();
 
@@ -94,7 +95,7 @@ crossorigin="anonymous">
         .then(function(data) {
             console.log("Adding Table");
           console.log(data);
-        //   alert("Adding table...");
+          alert("Table added");
         });
 
     });
